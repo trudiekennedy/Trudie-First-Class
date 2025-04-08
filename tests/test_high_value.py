@@ -10,22 +10,24 @@ def test_value_second_checker():
     assert highvalue.value_second == 4
     # checked that second value passes and fails correctly
 
+def test_first_get_highest():
+    highvalue = HighValue(10, 4)
+    assert highvalue.get_highest() == "First value is higher"
 
-# check values are actually integers
-# check values are assigned to self
-# test if values are not integers
-# test if values are integers
-# test if values are present
+def test_second_get_highest():
+    highvalue = HighValue(10, 14)
+    assert highvalue.get_highest() == "Second value is higher"
 
+def test_equal_get_highest():
+    highvalue = HighValue(10, 10)
+    assert highvalue.get_highest() == "Values are equal"
 
-# test get_highest
-# testing scenario where first is higher
-# where second is higher
-# where both are equal
+def test_add_first():
+    highvalue = HighValue(10, 4)
+    highvalue.add(7, "first")
+    assert highvalue.value_first == 17
 
-# assert that first == number
-# assert that second == number
-# check that first/second + increase == correct
-# check if variables are not inputted
-
-# check get_highest again with new values
+def test_add_second():
+    highvalue = HighValue(10, 4)
+    highvalue.add(10, "second")
+    assert highvalue.value_second == 14
